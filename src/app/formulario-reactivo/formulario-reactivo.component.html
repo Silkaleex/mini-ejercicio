@@ -1,0 +1,43 @@
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+  crossorigin="anonymous"
+/>
+<section class="mb-3">
+  <header>
+    <h1>Mini-Ejercicio Formulario Reactivo</h1>
+    <form
+      class="formulario"
+      #formulario="ngForm"
+      (ngSubmit)="onsubmit(formulario)"
+      novalidate
+    >
+      <fieldset>
+        <p>
+          <legend>Escribe Aqui Abajo</legend>
+          <label for="name" class="form-label">Su Nombre:</label>
+          <input
+            type="text"
+            placeholder="nombre"
+            required
+            [formControl]="name"
+            class="form-control mb-3"
+            id="exampleFormControlInput1"
+          />
+          <button
+            type="submit"
+            (click)="updateName()"
+            (click)="notificacion()"
+            class="btn btn-primary mb-3"
+          >
+            {{ aviso }}
+          </button>
+        </p>
+        <div class="m-3 valor">
+          <p>Hola {{ name.value }}</p>
+        </div>
+      </fieldset>
+    </form>
+  </header>
+</section>

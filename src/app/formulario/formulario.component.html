@@ -1,0 +1,25 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="formulario">
+  <fieldset>
+    <div class="mb-5">
+      <legend>Escribe Tu Nombre:</legend>
+      <label class="form-label"> Nombre </label>
+
+      <input
+        type="text"
+        formControlName="firstName"
+        required
+        class="form-control"
+      />
+      <button
+        type="submit"
+        [disabled]="!profileForm.valid"
+        class="btn btn-primary"
+      >
+        Enviar
+      </button>
+    </div>
+    <div>
+      <div class="box">🤖{{ this.profileForm.controls.firstName.value }}🤖</div>
+    </div>
+  </fieldset>
+</form>
